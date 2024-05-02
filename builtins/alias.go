@@ -27,5 +27,5 @@ func Alias(w io.Writer, args ...string) error {
 		return nil
 	}
 
-	return fmt.Errorf("Usage: alias [name[=value] ...]")
+	return fmt.Errorf("usage: alias [name[=value] ...]")
 }

@@ -9,7 +9,7 @@ import (
 	"os/user"
 	"strings"
 
-	"github.com/thollenkamp/CSCE4600/Project2/builtins"
+	"github.com/THollenkamp/CSCE4600Project2/builtins"
 )
 
 func main() {
@@ -78,6 +78,16 @@ func handleInput(w io.Writer, input string, exit chan<- struct{}) error {
 		return builtins.ChangeDirectory(args...)
 	case "env":
 		return builtins.EnvironmentVariables(w, args...)
+	case "echo":
+		return builtins.Echo(w, args...)
+	case "times":
+		return builtins.Times(w, args...)
+	case "alias":
+		return builtins.Alias(w, args...)
+	case "help":
+		return builtins.Help(w, args...)
+	case "sh":
+		return builtins.Shell(args...)
 	case "exit":
 		exit <- struct{}{}
 		return nil

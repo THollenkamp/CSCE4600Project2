@@ -8,7 +8,7 @@ import (
 
 func Times(w io.Writer, args ...string) error {
 	if len(args) > 0 {
-		return fmt.Errorf("Usage: times takes no arguments")
+		return fmt.Errorf("usage: times takes no arguments")
 	}
 
 	// Get the user and system time

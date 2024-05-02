@@ -1,4 +1,4 @@
-module github.com/THollenkamp/CSCE4600
+module github.com/THollenkamp/CSCE4600Project2
 
 go 1.19
 

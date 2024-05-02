@@ -1,5 +1,9 @@
 # Project 2: Shell Builtins
 
+## Running
+To run this project, simply execute "go run ." in the project directory.
+To run tests, run "go test" in the project directory.
+
 ## Description
 
 For this project we'll be adding commands to a simple shell. 
