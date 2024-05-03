@@ -19,8 +19,8 @@ func Help(w io.Writer, args ...string) error {
 		fmt.Fprintf(w, "echo: print text into the console\n")
 	case "env":
 		fmt.Fprintf(w, "env: prints all environment variables to console\n")
-	case "sh":
-		fmt.Fprintf(w, "sh: run shell command\n")
+	case "type":
+		fmt.Fprintf(w, "type: get file type of an input file\n")
 	case "times":
 		fmt.Fprintf(w, "times: get time since process was started, and time since command was last ran\n")
 	default:

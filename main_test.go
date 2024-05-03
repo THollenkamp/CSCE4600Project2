@@ -2,13 +2,16 @@ package main
 
 import (
 	"bytes"
-	"github.com/stretchr/testify/require"
 	"io"
 	"strings"
 	"testing"
 	"testing/iotest"
 	"time"
+
+	"github.com/stretchr/testify/require"
 )
+
+var systemTime time.Duration
 
 func Test_runLoop(t *testing.T) {
 	t.Parallel()
@@ -34,6 +37,34 @@ func Test_runLoop(t *testing.T) {
 				r: iotest.ErrReader(io.EOF),
 			},
 			wantErrW: "EOF",
+		},
+		{
+			name: "echo command",
+			args: args{
+				r: strings.NewReader("echo hello\nexit\n"),
+			},
+			wantW: "hello",
+		},
+		{
+			name: "help command",
+			args: args{
+				r: strings.NewReader("help type\nexit\n"),
+			},
+			wantW: "type: get file type of an input file",
+		},
+		{
+			name: "type command",
+			args: args{
+				r: strings.NewReader("type main.go\nexit\n"),
+			},
+			wantW: "File type of main.go: go",
+		},
+		{
+			name: "times command",
+			args: args{
+				r: strings.NewReader("times\nexit\n"),
+			},
+			wantW: "sys\t" + systemTime.String() + "\n",
 		},
 	}
 	for _, tt := range tests {

@@ -2,7 +2,7 @@
 
 ## Running
 To run this project, simply execute "go run ." in the project directory.
-To run tests, run "go test" in the project directory.
+To run tests, run "go test -v" in the project directory.
 
 ## Description
 

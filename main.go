@@ -86,8 +86,8 @@ func handleInput(w io.Writer, input string, exit chan<- struct{}) error {
 		return builtins.Alias(w, args...)
 	case "help":
 		return builtins.Help(w, args...)
-	case "sh":
-		return builtins.Shell(args...)
+	case "type":
+		return builtins.Type(w, args...)
 	case "exit":
 		exit <- struct{}{}
 		return nil
