@@ -11,6 +11,8 @@ func Times(w io.Writer, args ...string) error {
 		return fmt.Errorf("usage: times takes no arguments")
 	}
 
+	//testing commment
+
 	// Get the user and system time
 	userTime := time.Since(startTime) - systemTime
 	systemTime = time.Since(startTime)
