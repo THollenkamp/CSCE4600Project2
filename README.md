@@ -1,4 +1,5 @@
 # Project 2: Shell Builtins
+![Coverage](https://img.shields.io/badge/Coverage-47.7%25-yellow)
 
 ## Running
 To run this project, simply execute "go run ." in the project directory.
